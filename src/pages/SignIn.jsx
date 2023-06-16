@@ -1,9 +1,10 @@
 import React from 'react';
+import Layaout from '../container/Layaout';
 const SignIn = () => {
   return (
-    <div>
+    <Layaout>
       SignIn
-    </div>
+    </Layaout>
   );
 }
  

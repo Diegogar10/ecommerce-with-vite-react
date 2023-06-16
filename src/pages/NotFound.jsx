@@ -1,9 +1,10 @@
 import React from 'react';
+import Layaout from '../container/Layaout';
 const NotFound = () => {
   return (
-    <div>
+    <Layaout>
       Not Found
-    </div>
+    </Layaout>
   );
 }
  

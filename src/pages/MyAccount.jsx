@@ -1,10 +1,12 @@
 import React from 'react';
+import Layaout from '../container/Layaout';
 
 const  MyAccount = () => {
   return (
-    <div>
+    <Layaout>
       my account
-    </div>
+    </Layaout>
+    
   );
 }
  

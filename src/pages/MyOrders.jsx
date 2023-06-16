@@ -1,10 +1,11 @@
 import React from 'react';
+import Layaout from '../container/Layaout';
 
 const MyOrders = () => {
   return (
-   <div>
+   <Layaout>
     my orders
-   </div> 
+   </Layaout> 
   );
 }
  

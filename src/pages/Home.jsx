@@ -1,8 +1,11 @@
 import React from 'react';
+import Layaout from '../container/Layaout';
 
 function Home () {
   return ( 
-    <div>Home</div>
+    <Layaout>
+      Home
+    </Layaout>
    );
 }
 
