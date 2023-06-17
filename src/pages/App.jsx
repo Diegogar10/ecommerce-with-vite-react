@@ -5,9 +5,10 @@ import MyAccount from './MyAccount'
 import MyOrder from './MyOrder'
 import MyOrders from './MyOrders'
 import NotFound from './NotFound'
+import { ShopContextProvider } from '../context/ShopContext'
 import SignIn from './SignIn'
-import './App.css'
 import NavBar from '../components/NavBar'
+import './App.css'
 
 const AppRoutes = () => {
   let routes = useRoutes([
@@ -42,10 +43,12 @@ const AppRoutes = () => {
 const App = () => {
 
   return (
-    <BrowserRouter>
-      <NavBar/>
-      <AppRoutes/>
-    </BrowserRouter>
+    <ShopContextProvider>
+      <BrowserRouter>
+        <NavBar/>
+        <AppRoutes/>
+      </BrowserRouter>
+    </ShopContextProvider>
   )
 }
 
