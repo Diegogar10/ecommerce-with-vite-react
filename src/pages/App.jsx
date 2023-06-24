@@ -1,13 +1,14 @@
-import { useRoutes, BrowserRouter } from 'react-router-dom'
 import React from 'react'
+import { useRoutes, BrowserRouter } from 'react-router-dom'
+import { ShopContextProvider } from '../context/ShopContext'
 import Home from './Home'
 import MyAccount from './MyAccount'
 import MyOrder from './MyOrder'
 import MyOrders from './MyOrders'
 import NotFound from './NotFound'
-import { ShopContextProvider } from '../context/ShopContext'
 import SignIn from './SignIn'
 import NavBar from '../components/NavBar'
+import CheckoutSide from '../components/CheckoutSide'
 import './App.css'
 
 const AppRoutes = () => {
@@ -45,8 +46,9 @@ const App = () => {
   return (
     <ShopContextProvider>
       <BrowserRouter>
-        <NavBar/>
         <AppRoutes/>
+        <NavBar/>
+        <CheckoutSide/>
       </BrowserRouter>
     </ShopContextProvider>
   )

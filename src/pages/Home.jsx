@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Layaout from '../container/Layaout';
 import Card from '../components/Card';
-import { data } from 'autoprefixer';
+import ProductDetail from '../components/ProductDetail';
 
 function Home () {
   const API_Url = 'https://api.escuelajs.co/api/v1/products';
@@ -23,6 +23,7 @@ function Home () {
           ))
         }
       </div>
+      <ProductDetail />
     </Layaout>
    );
 }
