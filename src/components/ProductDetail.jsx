@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import {XMarkIcon} from '@heroicons/react/24/solid';
-import './ProductDetail.css';
 import { ShopContext } from '../context/ShopContext';
+import './ProductDetail.css';
 
 const ProductDetail = () => {
   const { openDetail, setOpenDetail, dataDetail } = useContext(ShopContext);
