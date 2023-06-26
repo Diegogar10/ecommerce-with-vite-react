@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import Layaout from '../container/Layaout';
 import Card from '../components/Card';
 import ProductDetail from '../components/ProductDetail';
+import { ShopContext } from '../context/ShopContext';
 
 function Home () {
-  const API_Url = 'https://api.escuelajs.co/api/v1/products';
-  const [items, setItems] = useState([]);
 
-  useEffect(()=>{
-    fetch(API_Url)
-      .then(response => response.json())
-      .then(data=>setItems(data));
-  },[]);
+  const { items } = useContext(ShopContext);
 
   return ( 
     <Layaout>
-      Home
+      <div className='flex items-center justify-center w-80 mb-4'>
+        <h1 className='font-medium text-xl'>Exclusive Products</h1>
+      </div>
       <div className='grid gap-4 grid-cols-4 w-full max-w-screen-lg'>
         {
           items?.map((data)=>(
