@@ -19,7 +19,7 @@ const ShopContextProvider = ({children}) => {
   const [categoryItems, setCategoryItems] = useState([]);
   const [filteredItems, setFilteredItems] = useState([]);
   
-  const { account, dataAccount } = Auth();
+  const { account, dataAccount,logout, login, localCreateAccount } = Auth();
   
 
   useEffect(()=>{
@@ -64,6 +64,8 @@ const ShopContextProvider = ({children}) => {
       category,
       order,
       items,
+      logout,
+      login,
       filteredItems,
       setCount,
       setOpenDetail,
@@ -73,6 +75,7 @@ const ShopContextProvider = ({children}) => {
       setOrder,
       setSearch,
       setCategory,
+      localCreateAccount
     }}>
       {children}
     </ShopContext.Provider>

@@ -3,15 +3,20 @@ import Layaout from '../container/Layaout';
 import Card from '../components/Card';
 import ProductDetail from '../components/ProductDetail';
 import { ShopContext } from '../context/ShopContext';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 function Home () {
-  const { filteredItems, search, setSearch, setCategory } = useContext(ShopContext);
+  const { filteredItems, search, setSearch, setCategory, account } = useContext(ShopContext);
 
   const currentPath = window.location.pathname;
   const index = currentPath.substring(currentPath.lastIndexOf('/') + 1);
-
+  const navigate = useNavigate(); 
   
   useEffect(()=>{
+    
+    if(!account){
+      navigate('/sign-in');
+    }
     setCategory(index);
   },[index]);
   
