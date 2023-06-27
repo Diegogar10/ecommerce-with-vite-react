@@ -9,12 +9,11 @@ function Home () {
 
   const currentPath = window.location.pathname;
   const index = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+
   
   useEffect(()=>{
     setCategory(index);
-  },[index])
-
-  
+  },[index]);
   
 
   const handleSearch = (e) => {

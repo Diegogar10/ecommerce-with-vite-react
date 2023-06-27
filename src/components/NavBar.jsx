@@ -4,7 +4,8 @@ import {ShoppingBagIcon} from '@heroicons/react/24/solid';
 import { ShopContext } from '../context/ShopContext';
 const NavBar = () => {
   const activeStyle = "underline underline-offset-4";
-  const { cart } = useContext(ShopContext);
+  const { cart, account } = useContext(ShopContext);
+
   return ( 
     <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light'>
       <ul className='flex items-center gap-3'>
@@ -76,6 +77,7 @@ const NavBar = () => {
           </NavLink>
         </li>
       </ul>
+      { account && 
       <ul className='flex items-center gap-3'>
         <li className='text-black/60'>
           diego@mail.com
@@ -107,6 +109,25 @@ const NavBar = () => {
               isActive ? activeStyle : undefined
             }  
           >
+            SignOut
+          </NavLink>
+        </li>
+        <li className='flex '>
+          <ShoppingBagIcon className='h-6 w-6 text-black'/> 
+          <div>
+            {cart.length}
+          </div>
+        </li>
+      </ul>
+      || 
+      <ul className='flex items-center gap-3'>
+        <li>
+          <NavLink 
+            to='/sign-in'
+            className= {({isActive})=>
+              isActive ? activeStyle : undefined
+            }  
+          >
             Sign In
           </NavLink>
         </li>
@@ -117,6 +138,7 @@ const NavBar = () => {
           </div>
         </li>
       </ul>
+      }
     </nav>
    );
 }

@@ -55,7 +55,7 @@ const CheckoutSide = () => {
               <button
                 className='w-full bg-black py-3 text-white rounded-lg'
                 onClick={() => handleCheckout()}  
-              >Checkoit</button>
+              >Checkout</button>
             </Link>
           </div>
         </aside> 

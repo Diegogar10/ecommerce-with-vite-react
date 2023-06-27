@@ -1,11 +1,11 @@
 import React, { createContext, useState, useEffect } from 'react';
+import { Auth } from '../utils/auth';
 
 const ShopContext = createContext();
 
 const ShopContextProvider = ({children}) => {
   
   const API_Url = 'https://api.escuelajs.co/api/v1/products';
-  
   
   const [count, setCount] = useState(0);
   const [openDetail, setOpenDetail] = useState(false);
@@ -18,6 +18,9 @@ const ShopContextProvider = ({children}) => {
   const [items, setItems] = useState([]);
   const [categoryItems, setCategoryItems] = useState([]);
   const [filteredItems, setFilteredItems] = useState([]);
+  
+  const { account, dataAccount } = Auth();
+  
 
   useEffect(()=>{
     fetch(API_Url)
@@ -25,6 +28,7 @@ const ShopContextProvider = ({children}) => {
       .then(data=>setItems(data));
   },[]);
 
+  
 
   const filteredItemsByTitle = (items, searchByTitle) => {
     return items.filter(item => item.title.toLowerCase().includes(searchByTitle.toLowerCase()));
@@ -51,6 +55,8 @@ const ShopContextProvider = ({children}) => {
     <ShopContext.Provider value={{
       count,
       search,
+      account, 
+      dataAccount,
       openDetail,
       openCheckout,
       dataDetail,
